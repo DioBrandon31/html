@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tem_uma_linda_lendo_isso</title>
+    <style>
+        body {
+            transition: background-color 2s;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="color:red;">Ola bela moca 😼</h1>
+
+<h2 style="color: violet;">Pra ti bonita</h2>
+<img src="https://i.pinimg.com/564x/ca/bf/ca/cabfca69bdf5a2d235a7d14abf30c416.jpg" alt="pra ti bonita" width="500" height="333">
+
+<p><h3 style="color:rgb(189, 132, 9);">Saiba que eu quero te dar uns beijos</h3></p>
+<p><h2 style="color:purple;">Aceitas?</h2></p>
+
+<div>
+    <button onclick="playMusic()">Sim</button>
+    <button id="naoButton" onclick="moveButton()">Não</button>
+</div>
+
+<!-- Código de incorporação do Spotify com autoplay -->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/39l1UORIhuHvUWfxG53tRZ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" id="spotifyFrame" autoplay></iframe>
+
+<script>
+    function playMusic() {
+        // Tocar a música do Spotify
+        var spotifyFrame = document.getElementById("spotifyFrame");
+        spotifyFrame.contentWindow.postMessage('{"method":"play"}', 'https://open.spotify.com');
+
+        // Redirecionar para o WhatsApp
+        window.location.href = "https://api.whatsapp.com/send?phone=5521987056580&text=Oi! Vamo Fechar?.";
+    }
+
+    function moveButton() {
+        // Mudar a posição do botão "Não"
+        var naoButton = document.getElementById("naoButton");
+        naoButton.style.position = "absolute";
+        naoButton.style.left = Math.floor(Math.random() * (window.innerWidth - 100)) + "px";
+        naoButton.style.top = Math.floor(Math.random() * (window.innerHeight - 30)) + "px";
+    }
+
+    function changeBackgroundColor() {
+        var colors = ["#BEE3DB", "#F4C2C2", "#F4E285", "#D9E5D6", "#A2D5F2"];
+        var body = document.body;
+        var currentColor = body.style.backgroundColor;
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+        while (randomColor === currentColor) {
+            randomColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        body.style.backgroundColor = randomColor;
+    }
+
+    // Chama a função para mudar a cor do fundo a cada 3 segundos
+    setInterval(changeBackgroundColor, 3000);
+</script>
+
+</body>
+</html>
